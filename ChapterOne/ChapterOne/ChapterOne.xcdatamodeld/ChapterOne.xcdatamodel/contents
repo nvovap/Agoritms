@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Men" representedClassName=".Men" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="rating" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="pairs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pairs" inverseName="mens" inverseEntity="Pairs" syncable="YES"/>
+    </entity>
+    <entity name="Pairs" representedClassName=".Pairs" syncable="YES">
+        <attribute name="dateEvalution" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="mens" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Men" inverseName="pairs" inverseEntity="Men" syncable="YES"/>
+        <relationship name="womens" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Women" inverseName="pairs" inverseEntity="Women" syncable="YES"/>
+    </entity>
+    <entity name="Women" representedClassName=".Women" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="pairs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pairs" inverseName="womens" inverseEntity="Pairs" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Men" positionX="-6570" positionY="-5859" width="128" height="88"/>
+        <element name="Women" positionX="-6138" positionY="-5868" width="128" height="88"/>
+        <element name="Pairs" positionX="-6392" positionY="-6037" width="128" height="88"/>
+    </elements>
+</model>
